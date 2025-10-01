@@ -41,6 +41,7 @@ const corsOptions = {
     "https://www.trailerbase.tech",
     "https://trailerbase.tech",
     "https://trailer-base.vercel.app/",
+    "http://localhost:3000/"
   ],
   methods: ["GET", "POST", "OPTIONS"],
   allowedHeaders: ["Content-Type", "x-api-key"],
