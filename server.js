@@ -40,7 +40,7 @@ const corsOptions = {
   origin: [
     "https://www.trailerbase.tech",
     "https://trailerbase.tech",
-    "https://trailer-base.vercel.app/",
+    "https://trailer-base.vercel.app",
     "http://localhost:3000"
   ],
   methods: ["GET", "POST", "OPTIONS"],
