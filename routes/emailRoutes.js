@@ -7,7 +7,7 @@ const createEmailRouter = (resend) => {
   // Welcome email endpoint
   router.post("/api/send-email", async (req, res) => {
     try {
-      const { to, userName, from = "welcome@mail.trailerbase.tech" } = req.body;
+      const { to, userName, from = "welcome@api.trailerbase.tech" } = req.body;
 
       // Input validation
       if (!to || !userName) {
@@ -23,7 +23,7 @@ const createEmailRouter = (resend) => {
       }
 
       // Validate from address
-      if (from !== "welcome@mail.trailerbase.tech") {
+      if (from !== "welcome@api.trailerbase.tech") {
         return res.status(400).json({ error: "Invalid from address" });
       }
 
