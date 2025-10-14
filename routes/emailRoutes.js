@@ -68,7 +68,7 @@ const createEmailRouter = (resend) => {
                 Welcome to TrailerBase
               </div>
               <h3
-                style='color:#000000;font-weight:bold;text-align:center;margin:0;font-family:"Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial, sans-serif;font-size:20px;padding:16px 24px 16px 24px'
+                style='color:#000000;font-weight:bold;text-align:center;margin:0;font-family:"Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial, sans-serif;font-size:20px;padding:16px 24px 16px 24px; text-decoration: none;'
               >
                 ${to}
               </h3>
