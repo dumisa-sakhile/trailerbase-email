@@ -46,6 +46,12 @@ npm install
 ```
 
 
+### pnpm notes
+
+- This project now uses pnpm. A `packageManager` field is added to `package.json` and a `pnpm-lock.yaml` lockfile is included.
+- To ensure the correct pnpm version is used in CI or on another machine, use Corepack to prepare/activate the pinned version (see installation command above).
+
+
 ## Environment variables
 
 Create a `.env` file in the project root or provide environment variables by your chosen method. At minimum provide:
@@ -66,13 +72,30 @@ PORT=3000
 - Development (auto-restart on changes):
 
 ```powershell
-npm run dev
+pnpm run dev
 ```
 
 - Production / simple start:
 
 ```powershell
-npm start
+pnpm start
+```
+
+If you prefer npm for running scripts you can still run the `npm` equivalents, but `pnpm` is recommended for installs and scripts to keep lockfile and workspace behavior consistent.
+
+### Local testing tip
+
+The server exits at startup if `RESEND_API_KEY` is not set (it intentionally fails fast). For safe local testing without your production API key, you can set a temporary or test key when running the server — for example (PowerShell):
+
+```powershell
+setx RESEND_API_KEY "test-key"
+pnpm start
+```
+
+This will persist the environment variable for your user. To set it for the current PowerShell session only, use:
+
+```powershell
+$env:RESEND_API_KEY = 'test-key'; pnpm start
 ```
 
 
@@ -132,7 +155,3 @@ See `package.json` for the full list. Notable dependencies include `express`, `r
 - If emails fail to send, check the response in the returned JSON `data` from Resend and confirm your Resend account and API key are valid.
 - For CORS issues, check `server.js` CORS `origin` list — add your origin if necessary.
 
-
-## License
-
-ISC
