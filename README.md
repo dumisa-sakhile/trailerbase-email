@@ -32,7 +32,14 @@ Key files:
 ## Installation
 
 1. Clone the repository.
-2. Install dependencies:
+2. Install dependencies — using pnpm (preferred):
+
+```powershell
+# enable Corepack (bundled with Node >=16.14 / 18+), prepare pnpm and install
+corepack enable; corepack prepare pnpm@latest --activate; pnpm install
+```
+
+If you prefer npm you can still run:
 
 ```powershell
 npm install
